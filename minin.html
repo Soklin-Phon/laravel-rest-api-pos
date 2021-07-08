@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<body>
+
+		<h1>GCF Mining Pool</h1>
+		<p id="demo"></p>
+
+	</body>
+	<script type="text/javascript">
+		setInterval(function(){
+
+			var xhttp = new XMLHttpRequest();
+		  	xhttp.onreadystatechange = function() {
+		    	if (this.readyState == 4 && this.status == 200) {
+		      		document.getElementById("demo").innerHTML = this.responseText;
+		      		console.log(this.responseText); 
+		    	}
+		  	};
+		  	xhttp.open("GET", "http://localhost/CamCyber/GCF/service/api/token/mining", true);
+		  	xhttp.send();
+
+		}, 10000);
+	</script>
+</html>
